@@ -3,10 +3,13 @@
 namespace App\Controller;
 
 
-use App\Repository\FaqRepository;
-use App\Repository\PostRepository;
 use App\Repository\TeamRepository;
 use App\Repository\UserRepository;
+use App\Repository\PostsRepository;
+use App\Repoistory\FaqRepository;
+
+
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -31,7 +34,6 @@ final class MainController extends AbstractController
             //'faq' => $faq,
         ]);
     }
-
 
 }
 
