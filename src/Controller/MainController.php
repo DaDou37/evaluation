@@ -1,0 +1,38 @@
+<?php
+
+namespace App\Controller;
+
+// use App\Repository\TeamRepository;
+use App\Repository\UserRepository;
+// use App\Repository\TeamRepository;
+// use App\Repoistory\FaqRepository;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+
+final class MainController extends AbstractController
+{
+    // Décommenter une fois la DB importée
+
+    /*
+
+   #[Route('/main', name: 'app_main')]
+    public function index(TeamRepository $teamRepo, PostsRepository $postsRepo, UserRepository $userRepo, FaqRepository $faqRepo): Response
+    {
+        $team = $teamRepo->findAll();
+        $posts = $postsRepo->findAll();
+        $comments = $userRepo->findAll();
+        $faq = $faqRepo->findAll();
+
+        return $this->render('main/index.html.twig', [
+            'team' => $team,
+            'posts' => $posts,
+            'comments' => $comments,
+            'faq' => $faq,
+        ]);
+    }
+
+    */
+}
