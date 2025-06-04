@@ -5,6 +5,7 @@ namespace App\Entity;
 use App\Repository\PostRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Users;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
 class Post
@@ -31,6 +32,10 @@ class Post
 
     #[ORM\Column]
     private ?\DateTimeImmutable $created_at = null;
+
+    #[ORM\ManyToOne(targetEntity: Users::class, inversedBy: 'posts')]
+    #[ORM\JoinColumn(nullable: false, onDelete: 'CASCADE')]
+    private ?Users $author = null;
 
     public function getId(): ?int
     {
@@ -106,6 +111,17 @@ class Post
     {
         $this->created_at = $created_at;
 
+        return $this;
+    }
+
+    public function getAuthor(): ?Users
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?Users $author): self
+    {
+        $this->author = $author;
         return $this;
     }
 }
