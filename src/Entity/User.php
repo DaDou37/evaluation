@@ -109,6 +109,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         // $this->plainPassword = null;
     }
 
+
     public function isVerified(): bool
     {
         return $this->isVerified;
