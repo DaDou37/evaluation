@@ -752,21 +752,21 @@
     <div class="container">
       <div class="team__wrapper">
         <div class="row g-4 align-items-center">
-{% for i in 1..8 %}
-  {% set randomImage = random(['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png']) %}
+{% for member in 1..8 %}
+
   <div class="col-sm-6 col-lg-3">
     <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="800">
       <div class="team__item-inner team__item-inner--shape">
         <div class="team__item-thumb team__item-thumb--style1">
-          <img src="{{ asset('assets/images/team/' ~ randomImage) }}" alt="Team Image" class="dark">
+          <img src="{{ asset('assets/images/team/' ) }}" alt="Team Image" class="dark">
         </div>
         <div class="team__item-content team__item-content--style1">
           <div class="team__item-author team__item-author--style1">
             <div class="team__item-authorinfo">
               <h6 class="mb-1">
-                <a href="team-details.html" class="stretched-link">Dianne Russell</a>
+                <a href="team-details.html" class="stretched-link">{{ member.email }}</a>
               </h6>
-              <p class="mb-0">Trade Captain</p>
+              <p class="mb-0">{{ member.roles }}</p>
             </div>
           </div>
         </div>
@@ -807,10 +807,10 @@
     <div class="blog__wrapper" data-aos="fade-up" data-aos-duration="1000">
       <div class="blog__slider swiper">
         <div class="swiper-wrapper">
-{% for i in 1..3 %}
+{% for post in posts|slice(0, 3) %}
   {% set randomImage = random(['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png']) %}
   {% set randomAuthor = random(['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png']) %}
-  <div class="swiper-slide">
+ <div class="swiper-slide">
     <div class="blog__item blog__item--style2">
       <div class="blog__item-inner">
         <div class="blog__thumb">
@@ -818,21 +818,23 @@
         </div>
         <div class="blog__content">
           <div class="blog__meta">
-            <span class="blog__meta-tag blog__meta-tag--style1">Forex trading</span>
+            {% if post.tags is iterable %}
+              {% for tag in post.tags %}
+                <span class="blog__meta-tag blog__meta-tag--style1">{{ tag }}</span>
+              {% endfor %}
+            {% endif %}
           </div>
-          <h5 class="10">
-            <a href="blog-details.html">Swing Trading Definition</a>
-          </h5>
-          <p class="mb-15">
-            Our platform is not only about trading—it's also a hub for knowledge and learning. We provide resources.
-          </p>
+            <h5 class="10"> <a href="blog-details.html">{{ post.name }}</a> </h5>
+            
+         
+          <p class="mb-15">{{ post.content|slice(0, 100) ~ '...' }}</p>
           <div class="blog__writer">
             <div class="blog__writer-thumb">
               <img src="{{ asset('assets/images/blog/author/' ~ randomAuthor) }}" alt="writer">
             </div>
             <div class="blog__writer-designation">
-              <h6 class="mb-0">Vasha Gueye</h6>
-              <span>20/6/2023</span>
+              <h6 class="mb-0">{{ member.email}}</h6>
+              <span>{{ post.createdAt|date('d/m/Y') }}</span>
             </div>
           </div>
         </div>
