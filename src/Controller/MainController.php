@@ -2,10 +2,14 @@
 
 namespace App\Controller;
 
+
 use App\Repository\TeamRepository;
 use App\Repository\UserRepository;
 use App\Repository\PostsRepository;
 use App\Repoistory\FaqRepository;
+
+
+
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -14,20 +18,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class MainController extends AbstractController
 {
+
    #[Route('/main', name: 'app_main')]
-    public function index(TeamRepository $teamRepo, PostsRepository $postsRepo, UserRepository $userRepo, FaqRepository $faqRepo): Response
+    public function index(PostRepository $postsRepo, UserRepository $userRepo,): Response
     {
-        $team = $teamRepo->findAll();
+        // $team = $teamRepo->findAll();
         $posts = $postsRepo->findAll();
         $comments = $userRepo->findAll();
-        $faq = $faqRepo->findAll();
+      //  $faq = $faqRepo->findAll();
 
         return $this->render('main/index.html.twig', [
-            'team' => $team,
+           // 'team' => $team,
             'posts' => $posts,
             'comments' => $comments,
-            'faq' => $faq,
+            //'faq' => $faq,
         ]);
     }
+
 }
 

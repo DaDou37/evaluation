@@ -752,150 +752,30 @@
     <div class="container">
       <div class="team__wrapper">
         <div class="row g-4 align-items-center">
-          <div class="col-sm-6 col-lg-3">
-            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="800">
-              <div class="team__item-inner team__item-inner--shape">
-                <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="assets/images/team/1.png" alt="Team Image" class="dark">
-                </div>
-                <div class="team__item-content team__item-content--style1">
-                  <div class="team__item-author team__item-author--style1">
-                    <div class="team__item-authorinfo">
-                      <h6 class="mb-1"><a href="team-details.html" class="stretched-link">Dianne Russell</a> </h6>
-                      <p class="mb-0">Trade Captain</p>
-                    </div>
-                  </div>
-                </div>
+{% for member in 1..8 %}
 
-              </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="800">
+      <div class="team__item-inner team__item-inner--shape">
+        <div class="team__item-thumb team__item-thumb--style1">
+          <img src="{{ asset('assets/images/team/' ) }}" alt="Team Image" class="dark">
+        </div>
+        <div class="team__item-content team__item-content--style1">
+          <div class="team__item-author team__item-author--style1">
+            <div class="team__item-authorinfo">
+              <h6 class="mb-1">
+                <a href="team-details.html" class="stretched-link">{{ member.email }}</a>
+              </h6>
+              <p class="mb-0">{{ member.roles }}</p>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="900">
-              <div class="team__item-inner team__item-inner--shape">
-                <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="assets/images/team/2.png" alt="Team Image" class="dark">
-                </div>
-                <div class="team__item-content team__item-content--style1">
-                  <div class="team__item-author team__item-author--style1">
-                    <div class="team__item-authorinfo">
-                      <h6 class="mb-1"><a href="team-details.html" class="stretched-link">Theresa Webb</a> </h6>
-                      <p class="mb-0">Strategic Advisor</p>
-                    </div>
-                  </div>
-                </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endfor %}
 
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="1000">
-              <div class="team__item-inner team__item-inner--shape">
-                <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="assets/images/team/3.png" alt="Team Image" class="dark">
-                </div>
-                <div class="team__item-content team__item-content--style1">
-                  <div class="team__item-author team__item-author--style1">
-                    <div class="team__item-authorinfo">
-                      <h6 class="mb-1"><a href="team-details.html" class="stretched-link">Courtney Henry</a> </h6>
-                      <p class="mb-0">Management Consultant</p>
-                    </div>
-                  </div>
-                </div>
 
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="1100">
-              <div class="team__item-inner team__item-inner--shape">
-                <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="assets/images/team/4.png" alt="Team Image" class="dark">
-                </div>
-                <div class="team__item-content team__item-content--style1">
-                  <div class="team__item-author team__item-author--style1">
-                    <div class="team__item-authorinfo">
-                      <h6 class="mb-1"><a href="team-details.html" class="stretched-link">Albert Flores</a> </h6>
-                      <p class="mb-0">Development Specialist</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="800">
-              <div class="team__item-inner team__item-inner--shape">
-                <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="assets/images/team/5.png" alt="Team Image" class="dark">
-                </div>
-                <div class="team__item-content team__item-content--style1">
-                  <div class="team__item-author team__item-author--style1">
-                    <div class="team__item-authorinfo">
-                      <h6 class="mb-1"><a href="team-details.html" class="stretched-link">Darrell Steward</a> </h6>
-                      <p class="mb-0">Growth Strategist</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="900">
-              <div class="team__item-inner team__item-inner--shape">
-                <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="assets/images/team/6.png" alt="Team Image" class="dark">
-                </div>
-                <div class="team__item-content team__item-content--style1">
-                  <div class="team__item-author team__item-author--style1">
-                    <div class="team__item-authorinfo">
-                      <h6 class="mb-1"><a href="team-details.html" class="stretched-link">Wade Warren</a> </h6>
-                      <p class="mb-0">Trade Consultant</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="1000">
-              <div class="team__item-inner team__item-inner--shape">
-                <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="assets/images/team/7.png" alt="Team Image" class="dark">
-                </div>
-                <div class="team__item-content team__item-content--style1">
-                  <div class="team__item-author team__item-author--style1">
-                    <div class="team__item-authorinfo">
-                      <h6 class="mb-1"><a href="team-details.html" class="stretched-link">Cody Fisher</a> </h6>
-                      <p class="mb-0">HR Consultant</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-lg-3">
-            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="1100">
-              <div class="team__item-inner team__item-inner--shape">
-                <div class="team__item-thumb team__item-thumb--style1">
-                  <img src="assets/images/team/8.png" alt="Team Image" class="dark">
-                </div>
-                <div class="team__item-content team__item-content--style1">
-                  <div class="team__item-author team__item-author--style1">
-                    <div class="team__item-authorinfo">
-                      <h6 class="mb-1"><a href="team-details.html" class="stretched-link">Bessie Cooper</a> </h6>
-                      <p class="mb-0">Financial Advisor</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
           <div class="text-center">
             <a href="team.html" class="trk-btn trk-btn--border trk-btn--primary mt-25">View more </a>
           </div>
@@ -927,10 +807,10 @@
     <div class="blog__wrapper" data-aos="fade-up" data-aos-duration="1000">
       <div class="blog__slider swiper">
         <div class="swiper-wrapper">
-{% for i in 1..3 %}
+{% for post in posts|slice(0, 3) %}
   {% set randomImage = random(['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png']) %}
   {% set randomAuthor = random(['1.png', '2.png', '3.png', '4.png', '5.png', '6.png', '7.png', '8.png', '9.png']) %}
-  <div class="swiper-slide">
+ <div class="swiper-slide">
     <div class="blog__item blog__item--style2">
       <div class="blog__item-inner">
         <div class="blog__thumb">
@@ -938,21 +818,23 @@
         </div>
         <div class="blog__content">
           <div class="blog__meta">
-            <span class="blog__meta-tag blog__meta-tag--style1">Forex trading</span>
+            {% if post.tags is iterable %}
+              {% for tag in post.tags %}
+                <span class="blog__meta-tag blog__meta-tag--style1">{{ tag }}</span>
+              {% endfor %}
+            {% endif %}
           </div>
-          <h5 class="10">
-            <a href="blog-details.html">Swing Trading Definition</a>
-          </h5>
-          <p class="mb-15">
-            Our platform is not only about trading—it's also a hub for knowledge and learning. We provide resources.
-          </p>
+            <h5 class="10"> <a href="blog-details.html">{{ post.name }}</a> </h5>
+            
+         
+          <p class="mb-15">{{ post.content|slice(0, 100) ~ '...' }}</p>
           <div class="blog__writer">
             <div class="blog__writer-thumb">
               <img src="{{ asset('assets/images/blog/author/' ~ randomAuthor) }}" alt="writer">
             </div>
             <div class="blog__writer-designation">
-              <h6 class="mb-0">Vasha Gueye</h6>
-              <span>20/6/2023</span>
+              <h6 class="mb-0">{{ member.email}}</h6>
+              <span>{{ post.createdAt|date('d/m/Y') }}</span>
             </div>
           </div>
         </div>

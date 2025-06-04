@@ -4,9 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-
-    "content-hash": "31ff5a81bddd8f8b7a6bc4ea9efadfcb",
-
+    "content-hash": "bf9a6a31568f57c4f38881dec20fb90e",
     "packages": [
         {
             "name": "composer/semver",
@@ -7452,7 +7450,6 @@
             "time": "2025-04-04T10:10:33+00:00"
         },
         {
-
             "name": "symfonycasts/reset-password-bundle",
             "version": "v1.23.1",
             "source": {
@@ -7501,7 +7498,6 @@
             "time": "2024-12-09T19:04:36+00:00"
         },
         {
-
             "name": "symfonycasts/verify-email-bundle",
             "version": "v1.17.3",
             "source": {
