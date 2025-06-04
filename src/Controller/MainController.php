@@ -2,11 +2,10 @@
 
 namespace App\Controller;
 
-
-// use App\Repository\TeamRepository;
+use App\Repository\TeamRepository;
 use App\Repository\UserRepository;
-// use App\Repository\TeamRepository;
-// use App\Repoistory\FaqRepository;
+use App\Repository\PostsRepository;
+use App\Repoistory\FaqRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -15,10 +14,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 final class MainController extends AbstractController
 {
-    // Décommenter une fois la DB importée
-
-    /*
-
    #[Route('/main', name: 'app_main')]
     public function index(TeamRepository $teamRepo, PostsRepository $postsRepo, UserRepository $userRepo, FaqRepository $faqRepo): Response
     {
@@ -34,7 +29,5 @@ final class MainController extends AbstractController
             'faq' => $faq,
         ]);
     }
-
-    */
 }
 

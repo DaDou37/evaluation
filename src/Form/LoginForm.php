@@ -4,20 +4,20 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
 
-class ResetPasswordRequestForm extends AbstractType
+class LoginForm extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('email', EmailType::class, [
-                'attr' => ['autocomplete' => 'email'],
+            ->add('email')
+            ->add('password', PasswordType::class)
+            ->add('rememberMe', CheckboxType::class, [
+                'mapped' => false,
                 'constraints' => [
-                    new NotBlank([
-                        'message' => 'Please enter your email',
+                    new IsTrue([
+                        'message' => 'You shall be remembered',
                     ]),
                 ],
             ])
@@ -26,6 +26,7 @@ class ResetPasswordRequestForm extends AbstractType
 
     public function configureOptions(OptionsResolver $resolver): void
     {
-        $resolver->setDefaults([]);
+        $resolver->setDefaults([
+        ]);
     }
 }

@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\ChangePasswordForm;
-use App\Form\ResetPasswordRequestForm;
+use App\Form\ResetPasswordForm;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -45,7 +45,6 @@ final class ResetPasswordController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var string $email */
             $email = $form->get('email')->getData();
 
             return $this->processSendingPasswordResetEmail($email, $mailer, $translator
