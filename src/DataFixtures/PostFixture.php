@@ -60,4 +60,4 @@ class PostFixture extends Fixture implements DependentFixtureInterface
             UsersFixtures::class,
         ];
     }
-}
+} 

@@ -24,13 +24,13 @@ final class MainController extends AbstractController
     {
         // $team = $teamRepo->findAll();
         $posts = $postsRepo->findAll();
-        $comments = $userRepo->findAll();
+        $users = $userRepo->findAll();
       //  $faq = $faqRepo->findAll();
 
         return $this->render('main/index.html.twig', [
            // 'team' => $team,
             'posts' => $posts,
-            'comments' => $comments,
+            'users' => $users,
             //'faq' => $faq,
         ]);
     }

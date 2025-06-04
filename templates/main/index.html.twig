@@ -743,46 +743,45 @@
 
 
 
-  <!-- ===============>> Team section start here <<================= -->
-  <section class="team padding-top padding-bottom bg-color">
-    <div class="section-header section-header--max50">
-      <h2 class="mb-15 mt-minus-5">Meet our <span>advisers</span></h2>
-      <p>Hey everyone, meet our amazing advisers! They're here to help and guide us through anything.</p>
-    </div>
-    <div class="container">
-      <div class="team__wrapper">
-        <div class="row g-4 align-items-center">
-        
-{% for user in user %}
-  <div class="col-sm-6 col-lg-3">
-    <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="800">
-      <div class="team__item-inner team__item-inner--shape">
-        <div class="team__item-thumb team__item-thumb--style1">
-          <img src="{{ asset('assets/images/team/default.jpg') }}" alt="Team Image" class="dark">
-        </div>
-        <div class="team__item-content team__item-content--style1">
-          <div class="team__item-author team__item-author--style1">
-            <div class="team__item-authorinfo">
-              <h6 class="mb-1">
-                <a href="#" class="stretched-link">{{ user.email }}</a>
-              </h6>
-              <p class="mb-0">{{ user.roles[0]|replace({'ROLE_': ''})|lower|capitalize }}</p>
+<section class="team padding-top padding-bottom bg-color">
+  <div class="section-header section-header--max50">
+    <h2 class="mb-15 mt-minus-5">Meet our <span>advisers</span></h2>
+    <p>Hey everyone, meet our amazing advisers! They're here to help and guide us through anything.</p>
+  </div>
+  <div class="container">
+    <div class="team__wrapper">
+      <div class="row g-4 align-items-center">
+        {% for user in users|slice(0, 8) %}
+          <div class="col-sm-6 col-lg-3">
+            <div class="team__item team__item--shape" data-aos="fade-up" data-aos-duration="{{ 800 + (loop.index0 * 100) }}">
+              <div class="team__item-inner team__item-inner--shape">
+                <div class="team__item-thumb team__item-thumb--style1">
+                  <img src="{{ asset('assets/images/blog/author/' ~ user.picture) }}" alt="{{ user.name }}" class="dark">
+                </div>
+                <div class="team__item-content team__item-content--style1">
+                  <div class="team__item-author team__item-author--style1">
+                    <div class="team__item-authorinfo">
+                      <h6 class="mb-1">{{ user.name }}</h6>
+
+                      <p class="mb-0">
+                        {{ user.roles[0]|replace({'ROLE_': ''})|title }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+        {% endfor %}
+        <div class="text-center">
+          <a href="" class="trk-btn trk-btn--border trk-btn--primary mt-25">View more</a>
         </div>
       </div>
     </div>
   </div>
-{% endfor %}
+</section>
 
 
-          <div class="text-center">
-            <a href="team.html" class="trk-btn trk-btn--border trk-btn--primary mt-25">View more </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
   <!-- ===============>> Team section start here <<================= -->
 
 
@@ -833,7 +832,7 @@
               <img src="{{ asset('assets/images/blog/author/' ~ randomAuthor) }}" alt="writer">
             </div>
             <div class="blog__writer-designation">
-              <h6 class="mb-0">{{ member.email}}</h6>
+              <h6 class="mb-0">{{ post.author.name }}</h6>
               <span>{{ post.createdAt|date('d/m/Y') }}</span>
             </div>
           </div>

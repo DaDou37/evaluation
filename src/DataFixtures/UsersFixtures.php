@@ -20,7 +20,7 @@ class UsersFixtures extends Fixture
         $admin = new Users();
         $admin->setEmail('admin@admin.admin');
         $admin->setName('Admin');
-        $admin->setPicture('https://i.pravatar.cc/150?img=1');
+        $admin->setPicture('1.png');
         $admin->setRoles(['ROLE_ADMIN']);
         $admin->setPassword($this->passwordHasher->hashPassword($admin, 'admin'));
         $admin->setIsVerified(true);
@@ -30,20 +30,23 @@ class UsersFixtures extends Fixture
         $faker = Factory::create('fr_FR');
 
         for ($i = 0; $i < 50; $i++) {
-            $user = new Users();
-            $user->setPicture('https://i.pravatar.cc/150?img=' . rand(2, 70));
-            $user->setName($faker->name());
-            $user->setEmail($faker->unique()->safeEmail());
-            $user->setRoles(['ROLE_USER']);
-            $user->setIsVerified($faker->boolean(80));
-            $password = $this->passwordHasher->hashPassword($user, 'password');
-            $user->setPassword($password);
-            $this->addReference('user_' . $i, $user);
+    $user = new Users();
+    
+    // Pour les images 1.png à 9.png, on boucle dessus en mod 9 + 1
+    $imageNumber = ($i % 9) + 1;
+    $user->setPicture($imageNumber . '.png');
+    
+    $user->setName($faker->name());
+    $user->setEmail($faker->unique()->safeEmail());
+    $user->setRoles(['ROLE_USER']);
+    $user->setIsVerified($faker->boolean(80));
+    $password = $this->passwordHasher->hashPassword($user, 'password');
+    $user->setPassword($password);
+    $this->addReference('user_' . $i, $user);
 
-
-            $manager->persist($user);
-        }
-
-        $manager->flush();
+    $manager->persist($user);
     }
+    $manager->flush();
+}
+
 }
