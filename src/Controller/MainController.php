@@ -20,18 +20,18 @@ final class MainController extends AbstractController
 {
 
    #[Route('/main', name: 'app_main')]
-    public function index(PostRepository $postsRepo, UserRepository $userRepo,): Response
+    public function index(PostRepository $postsRepo, UserRepository $userRepo, FaqRepository $faqRepo): Response
     {
         // $team = $teamRepo->findAll();
         $posts = $postsRepo->findAll();
         $users = $userRepo->findAll();
-      //  $faq = $faqRepo->findAll();
+        $faqs = $faqRepo->findAll();
 
         return $this->render('main/index.html.twig', [
            // 'team' => $team,
             'posts' => $posts,
             'users' => $users,
-            //'faq' => $faq,
+            'faqs' => $faqs,
         ]);
     }
 
